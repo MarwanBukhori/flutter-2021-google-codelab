@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
-void main(){
+import 'widgets/widgets.dart';
 
+void main(){
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -23,7 +25,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: CustomAppBar(title: 'Zero to Unicorn'),
       bottomNavigationBar: BottomAppBar(),
     );
   }
