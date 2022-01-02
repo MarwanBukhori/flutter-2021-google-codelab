@@ -20,7 +20,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
           horizontal: 20,
           vertical: 10,
         ),
-        child: Text('Zero to Unicorn',
+        child: Text(title,
           style: TextStyle(
             color: Colors.white,
             fontSize: 24,

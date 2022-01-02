@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_codelab/widgets/widgets.dart';
 
-class HomeScreen extends StatelessWidget {
-  static const String routeName = '/';
+class CartScreen extends StatelessWidget {
+  static const String routeName = '/cart';
 
   static Route route(){
     return MaterialPageRoute(
       settings: RouteSettings(name: routeName),
-      builder: (_) => HomeScreen(),
+      builder: (_) => CartScreen(),
     );
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: 'Zero to Unicorn'),
+      appBar: CustomAppBar(title: 'Cart'),
       bottomNavigationBar: CustomNavBar(),
     );
   }
