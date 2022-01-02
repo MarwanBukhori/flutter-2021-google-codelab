@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_codelab/screens/screens.dart';
+
 
 import 'widgets/widgets.dart';
 
 void main(){
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
 
@@ -16,17 +19,6 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: HomeScreen(),
-    );
-  }
-}
-
-class HomeScreen extends StatelessWidget {
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: CustomAppBar(title: 'Zero to Unicorn'),
-      bottomNavigationBar: BottomAppBar(),
     );
   }
 }
