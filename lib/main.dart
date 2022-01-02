@@ -3,6 +3,7 @@ import 'package:flutter_codelab/screens/screens.dart';
 
 
 import 'config/app_router.dart';
+import 'config/theme.dart';
 import 'widgets/widgets.dart';
 
 void main(){
@@ -16,9 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'E-Commerce',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: theme(),
       onGenerateRoute: AppRouter.onGenerateRoute,
       initialRoute: HomeScreen.routeName,
 
