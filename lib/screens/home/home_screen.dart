@@ -6,15 +6,15 @@ import 'package:flutter_codelab/widgets/widgets.dart';
 class HomeScreen extends StatelessWidget {
   static const String routeName = '/';
 
-  static Route route(){
+  static Route route() {
     return MaterialPageRoute(
       settings: RouteSettings(name: routeName),
       builder: (_) => HomeScreen(),
     );
   }
+
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: CustomAppBar(title: 'Kedaiku'),
       bottomNavigationBar: CustomNavBar(),
@@ -22,23 +22,21 @@ class HomeScreen extends StatelessWidget {
         children: [
           Container(
               child: CarouselSlider(
-                options: CarouselOptions(
-                  aspectRatio: 1.5, //make it taller
-                  viewportFraction: 0.9, //make it wider
-                  enlargeCenterPage: true,
-                  enlargeStrategy: CenterPageEnlargeStrategy.height,
-                ),
-                items: Category.categories
-                    .map((category) => HeroCarouselCard(category: category))
-                    .toList(),
-              )
-          ),
+            options: CarouselOptions(
+              aspectRatio: 1.5, //make it taller
+              viewportFraction: 0.9, //make it wider
+              enlargeCenterPage: true,
+              enlargeStrategy: CenterPageEnlargeStrategy.height,
+            ),
+            items: Category.categories
+                .map((category) => HeroCarouselCard(category: category))
+                .toList(),
+          )),
           SectionTitle(title: 'RECOMMENDED'),
+          //Product Card
+          ProductCard(product: Product.products[0],)
         ],
       ),
     );
   }
 }
-
-
-
