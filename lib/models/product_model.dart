@@ -13,8 +13,8 @@ class Product extends Equatable {
     required this.category,
     required this.imageUrl,
     required this.price,
-    required this.isPopular,
-    required this.isRecommended
+    required this.isRecommended,
+    required this.isPopular
   });
 
 
@@ -26,31 +26,34 @@ class Product extends Equatable {
         category,
         imageUrl,
         price,
-        isPopular,
-        isRecommended
+        isRecommended,
+        isPopular
       ];
 
   static List<Product> products = [
-    Product(name: 'Soft Drink #1',
+    Product(
+        name: 'Soft Drink #1',
         category: 'Soft Drinks',
-        imageUrl: 'https://images.unsplash.com/photo-1499638673689-79a0b5115d87?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80',
+        imageUrl: 'https://images.unsplash.com/photo-1598614187854-26a60e982dc4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
         price: 1.99,
-        isPopular: true,
-        isRecommended: true),
+        isRecommended: true,
+        isPopular: false),
 
-    Product(name: 'Soft Drink #2',
+    Product(
+        name: 'Soft Drink #2',
         category: 'Soft Drinks',
-        imageUrl: 'https://images.unsplash.com/photo-1527960471264-932f39eb5846?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
+        imageUrl: 'https://images.unsplash.com/photo-1610873167013-2dd675d30ef4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=488&q=80',
         price: 2.99,
-        isPopular: true,
-        isRecommended: false),
+        isRecommended: false,
+        isPopular: true),
 
-    Product(name: 'Soft Drink #3',
+    Product(
+        name: 'Soft Drink #3',
         category: 'Soft Drinks',
-        imageUrl: 'https://images.unsplash.com/photo-1527960471264-932f39eb5846?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
+        imageUrl: 'https://images.unsplash.com/photo-1603833797131-3c0a18fcb6b1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
         price: 5.99,
-        isPopular: true,
-        isRecommended: false)
+        isRecommended: true,
+        isPopular: true)
   ];
 
 

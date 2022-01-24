@@ -20,18 +20,20 @@ class HomeScreen extends StatelessWidget {
       bottomNavigationBar: CustomNavBar(),
       body: Column(
         children: [
-          Container(
-              child: CarouselSlider(
-            options: CarouselOptions(
-              aspectRatio: 1.5, //make it taller
-              viewportFraction: 0.9, //make it wider
-              enlargeCenterPage: true,
-              enlargeStrategy: CenterPageEnlargeStrategy.height,
-            ),
-            items: Category.categories
-                .map((category) => HeroCarouselCard(category: category))
-                .toList(),
-          )),
+          Expanded(
+            child: Container(
+                child: CarouselSlider(
+              options: CarouselOptions(
+                aspectRatio: 1.5, //make it taller
+                viewportFraction: 0.9, //make it wider
+                enlargeCenterPage: true,
+                enlargeStrategy: CenterPageEnlargeStrategy.height,
+              ),
+              items: Category.categories
+                  .map((category) => HeroCarouselCard(category: category))
+                  .toList(),
+            )),
+          ),
           SectionTitle(title: 'RECOMMENDED'),
           //Product Card
           // ProductCard(product: Product.products[0],)

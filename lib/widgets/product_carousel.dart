@@ -7,7 +7,9 @@ class ProductCarousel extends StatelessWidget {
 
   const ProductCarousel({
     Key? key,
-    required this.products
+    required this.products,
+
+
   }) : super(key: key);
 
   @override
@@ -19,11 +21,12 @@ class ProductCarousel extends StatelessWidget {
           padding:
           const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
           scrollDirection: Axis.horizontal,
-          itemCount: Product.products.length,
+          itemCount: products.length,
           itemBuilder: (context, index) {
             return Padding(
               padding: const EdgeInsets.only(right: 5.0),
               child: ProductCard(product: products[index],),
+
             );
           }),
     );
