@@ -16,7 +16,9 @@ class HeroCarouselCard extends StatelessWidget {
         Navigator.pushNamed(context, '/catalog', arguments: category);
       },
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 5.0, vertical: 20),
+        margin: EdgeInsets.symmetric(
+            horizontal: 5.0,
+            vertical: 20),
         child: ClipRRect(
             borderRadius: BorderRadius.all(Radius.circular(5.0)),
             child: Stack(
