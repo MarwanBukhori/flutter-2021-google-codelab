@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_codelab/models/category_model.dart';
+import 'package:flutter_codelab/models/models.dart';
 import 'package:flutter_codelab/screens/screens.dart';
 
 class AppRouter{
@@ -18,7 +18,7 @@ class AppRouter{
       case WishlistScreen.routeName:
         return WishlistScreen.route();
       case ProductScreen.routeName:
-        return ProductScreen.route();
+        return ProductScreen.route(product: settings.arguments as Product);
       default:
         return _errorRoute();
     }
