@@ -1,7 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_codelab/models/models.dart';
 import 'package:flutter_codelab/widgets/widgets.dart';
+import 'package:flutter_codelab/blocs/wishlist/wishlist_bloc.dart';
 
 class ProductScreen extends StatelessWidget {
   static const String routeName = '/product';
@@ -34,19 +36,32 @@ class ProductScreen extends StatelessWidget {
                     color: Colors.white,
                   ),
                   onPressed: () {}),
-              IconButton(
-                  icon: Icon(Icons.favorite, color: Colors.white),
-                  onPressed: () {}),
+              BlocBuilder<WishlistBloc, WishlistState>(
+                builder: (context, state) {
+                  return IconButton(
+                      icon: Icon(Icons.favorite, color: Colors.white),
+                      onPressed: () {
+                        context
+                            .read<WishlistBloc>()
+                            .add(AddWishlistProduct(product));
+                        
+                        final snackbar = SnackBar(content: Text('Added to your Wishlist'));
+                        ScaffoldMessenger.of(context).showSnackBar(snackbar);
+                      }
+                      );
+                },
+              ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(primary: Colors.white),
-                  onPressed: () {},
-                  child: Text(
+                onPressed: () {},
+                child: Text(
                     'ADD TO CARD',
-                    style: Theme.of(context)
+                    style: Theme
+                        .of(context)
                         .textTheme
                         .headline3!
-                        ),
-                  )
+                ),
+              )
             ],
           ),
         ),
@@ -70,13 +85,19 @@ class ProductScreen extends StatelessWidget {
           child: Stack(
             children: [
               Container(
-                width: MediaQuery.of(context).size.width,
+                width: MediaQuery
+                    .of(context)
+                    .size
+                    .width,
                 height: 60,
                 color: Colors.black.withAlpha(50),
               ),
               Container(
                 margin: const EdgeInsets.all(5.0),
-                width: MediaQuery.of(context).size.width - 10,
+                width: MediaQuery
+                    .of(context)
+                    .size
+                    .width - 10,
                 height: 50,
                 color: Colors.black,
                 child: Padding(
@@ -85,12 +106,14 @@ class ProductScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(product.name,
-                          style: Theme.of(context)
+                          style: Theme
+                              .of(context)
                               .textTheme
                               .headline5!
                               .copyWith(color: Colors.white)),
                       Text('${product.price}',
-                          style: Theme.of(context)
+                          style: Theme
+                              .of(context)
                               .textTheme
                               .headline5!
                               .copyWith(color: Colors.white))
@@ -107,13 +130,19 @@ class ProductScreen extends StatelessWidget {
             initiallyExpanded: true,
             title: Text(
               'Product Information',
-              style: Theme.of(context).textTheme.headline3,
+              style: Theme
+                  .of(context)
+                  .textTheme
+                  .headline3,
             ),
             children: [
               ListTile(
                 title: Text(
                   'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-                  style: Theme.of(context).textTheme.bodyText1,
+                  style: Theme
+                      .of(context)
+                      .textTheme
+                      .bodyText1,
                 ),
               )
             ],
@@ -125,13 +154,19 @@ class ProductScreen extends StatelessWidget {
             initiallyExpanded: true,
             title: Text(
               'Delivery Information',
-              style: Theme.of(context).textTheme.headline3,
+              style: Theme
+                  .of(context)
+                  .textTheme
+                  .headline3,
             ),
             children: [
               ListTile(
                 title: Text(
                   'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-                  style: Theme.of(context).textTheme.bodyText1,
+                  style: Theme
+                      .of(context)
+                      .textTheme
+                      .bodyText1,
                 ),
               )
             ],
