@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_codelab/blocs/wishlist/wishlist_bloc.dart';
 import 'package:flutter_codelab/screens/screens.dart';
-
-
 import 'config/app_router.dart';
 import 'config/theme.dart';
-import 'widgets/widgets.dart';
+
 
 void main(){
   WidgetsFlutterBinding.ensureInitialized();
