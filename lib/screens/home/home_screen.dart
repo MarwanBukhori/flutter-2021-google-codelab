@@ -18,37 +18,41 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(title: 'Kedaiku'),
       bottomNavigationBar: CustomNavBar(),
-      body: Column(
-        children: [
-          Expanded(
-            child: Container(
+      body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+        child: Column(
+          children: [
+            Container(
                 child: CarouselSlider(
               options: CarouselOptions(
-                aspectRatio: 1.5, //make it taller
-                viewportFraction: 0.9, //make it wider
                 enlargeCenterPage: true,
-                enlargeStrategy: CenterPageEnlargeStrategy.height,
+                autoPlay: true,
+                aspectRatio: 16 / 9,
+                viewportFraction: 1,
+
+                // enlargeStrategy: CenterPageEnlargeStrategy.height,
               ),
               items: Category.categories
                   .map((category) => HeroCarouselCard(category: category))
                   .toList(),
             )),
-          ),
-          SectionTitle(title: 'RECOMMENDED'),
-          //Product Card
-          // ProductCard(product: Product.products[0],)
-          ProductCarousel(
-              products: Product.products
-                  .where((product) => product.isRecommended)
-                  .toList()),
-          SectionTitle(title: 'MOST POPULAR'),
-          //Product Card
-          // ProductCard(product: Product.products[0],)
-          ProductCarousel(
-              products: Product.products
-                  .where((product) => product.isPopular)
-                  .toList()),
-        ],
+
+            SectionTitle(title: 'RECOMMENDED'),
+            //Product Card
+            // ProductCard(product: Product.products[0],)
+            ProductCarousel(
+                products: Product.products
+                    .where((product) => product.isRecommended)
+                    .toList()),
+            SectionTitle(title: 'MOST POPULAR'),
+            //Product Card
+            // ProductCard(product: Product.products[0],)
+            ProductCarousel(
+                products: Product.products
+                    .where((product) => product.isPopular)
+                    .toList()),
+          ],
+        ),
       ),
     );
   }
